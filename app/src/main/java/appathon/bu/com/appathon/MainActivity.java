@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.nfc.Tag;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,6 +33,7 @@ public class MainActivity extends Activity {
     Fragment fragment = new Fragment();
     private Fragment blankFrag = new Fragment();
     private final int POSITION = 0;
+    private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
 
 
     @Override
@@ -39,11 +42,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
 
-//        if(!(GooglePlayServicesUtil.isGooglePlayServicesAvailable(this) == ConnectionResult.SUCCESS)){
-//            int tempStatus = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
-//            GooglePlayServicesUtil.getErrorDialog(tempStatus, MainActivity.class, )
-//        }
-
+        checkPlayServices();  //check for valid install of Google Play Services
 
         navDrawerTitles = getResources().getStringArray(R.array.nav_array);
         navDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -85,6 +84,22 @@ public class MainActivity extends Activity {
         if (savedInstanceState == null) {
             selectItem(0);
         }
+    }
+
+    private boolean checkPlayServices() {
+        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+        if (resultCode != ConnectionResult.SUCCESS) {
+            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+                GooglePlayServicesUtil.getErrorDialog(resultCode, this,
+                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
+            } else {
+
+
+                finish();
+            }
+            return false;
+        }
+        return true;
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
