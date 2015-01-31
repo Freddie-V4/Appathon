@@ -2,6 +2,8 @@ package appathon.bu.com.appathon;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.nfc.Tag;
 import android.support.v4.widget.DrawerLayout;
@@ -31,6 +33,7 @@ public class MainActivity extends Activity {
     private Fragment blankFrag = new Fragment();
     private final int POSITION = 0;
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+    String TAG = "TAG";
 
 
     @Override
@@ -141,7 +144,31 @@ public class MainActivity extends Activity {
      */
     private void selectItem(int position) {
 
-//        }
+        switch (POSITION) {
+
+
+            case 0:
+                FragmentManager mFragManager0 = getFragmentManager();
+                FragmentTransaction mTrans0 = mFragManager0.beginTransaction();
+
+                Fragment mRF = new ReasonsFragment();
+
+                mTrans0.replace(R.id.reasons_frag, mRF);
+
+                break;
+            case 3:
+                FragmentManager mFragManager3 = getFragmentManager();
+                FragmentTransaction mTrans3 = mFragManager3.beginTransaction();
+
+                Fragment mCF = new ContactsFragment();
+
+                mTrans3.replace(R.id.contacts_frag, mCF);
+
+                break;
+
+
+        }
+
 
         Bundle args = new Bundle();
         args.putInt(ReasonsFragment.TEA_TYPE_POS, position);
