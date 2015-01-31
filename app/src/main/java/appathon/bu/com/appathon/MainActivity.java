@@ -118,46 +118,7 @@ public class MainActivity extends Activity {
      * Starts an Activity when item is clicked
      */
     private void selectItem(int position) {
-        // Create a new fragment and specify the type
-        // to show based on position
-
-//        switch (position) {
-//            case POSITION:
-//                FragmentManager startingFragManager = getFragmentManager();
-//                FragmentTransaction startingFragTrans = startingFragManager.beginTransaction();
-//                Fragment startFrag = new StartingFragment();
-//
-//                startingFragTrans.replace(R.id.fragment_replace, startFrag).commit();
-//                // Begin a fragment transaction
-//                // Instantiate new StartingFragment
-//                // When app first loads, display StartingFragment
-//                break;
-//
-//            case POSITION + 1:
-//                FragmentManager counterFragManager = getFragmentManager();
-//                FragmentTransaction counterFragTrans = counterFragManager.beginTransaction();
-//                Fragment counterFrag = new TeaCounterFragment();
-//
-//                counterFragTrans.replace(R.id.fragment_replace, counterFrag).commit();
-//
-//                // When "Tea Counter" is clicked in NavDrawer,
-//                // replace StartingFragment with TeaCounterFragment
-//
-//                break;
-//
-//            case POSITION + 2:
-//                FragmentManager logFragManager = getFragmentManager();
-//                FragmentTransaction logFragTrans = logFragManager.beginTransaction();
-//
-//                logFragTrans.replace(R.id.fragment_replace, blankFrag).commit();
-//
-//                Context context = getApplicationContext();
-//                CharSequence text = "Tea Log!";
-//                int duration = Toast.LENGTH_SHORT;
-//
-//                Toast toast = Toast.makeText(context, text, duration);
-//                toast.show();
-//                break;
+       
 //        }
 
         Bundle args = new Bundle();
