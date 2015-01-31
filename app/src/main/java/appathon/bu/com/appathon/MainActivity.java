@@ -36,8 +36,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-<<<<<<< HEAD
-
 
 //        if(GooglePlayServicesUtil.isGooglePlayServicesAvailable(this)){
 //            GooglePlayServicesUtil.getErrorDialog()
@@ -47,9 +45,7 @@ public class MainActivity extends Activity {
         {
             navDrawerTitles = getResources().getStringArray(R.array.nav_array);
         }
-=======
         navDrawerTitles = getResources().getStringArray(R.array.nav_array);
->>>>>>> d1d707c959f13b737cec5379253035f726b685b5
         navDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
