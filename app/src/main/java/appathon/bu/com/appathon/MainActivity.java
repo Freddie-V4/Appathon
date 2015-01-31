@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-                navDrawerTitles = getResources().getStringArray(R.array.nav_array);
+        navDrawerTitles = getResources().getStringArray(R.array.nav_array);
         navDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
@@ -43,12 +43,8 @@ public class MainActivity extends Activity {
 
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
-//        getActionBar().setDisplayHomeAsUpEnabled(true);
-//        getActionBar().setHomeButtonEnabled(true);
-
-        if(android.os.Build.VERSION.SDK_INT < 11) {
-            requestWindowFeature(Window.FEATURE_NO_TITLE);
-        }
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
 
         navDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
