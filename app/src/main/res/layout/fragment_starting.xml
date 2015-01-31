@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_replace">
+
+    <RelativeLayout
+        android:id="@+id/frame_layout_init"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffff6a6a">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="PriveTime"
+            android:id="@+id/textView"
+            android:textSize="40dp"
+            android:textColor="#ffffffff"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:textSize="20dp"
+            android:textColor="#ffffffff"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="93dp"
+            android:hint="Name:" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:textSize="20dp"
+            android:textColor="#ffffffff"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:layout_below="@+id/editText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="70dp"
+            android:hint="Phone number:" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

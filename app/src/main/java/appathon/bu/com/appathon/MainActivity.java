@@ -151,18 +151,18 @@ public class MainActivity extends Activity {
                 FragmentManager mFragManager0 = getFragmentManager();
                 FragmentTransaction mTrans0 = mFragManager0.beginTransaction();
 
-                Fragment mRF = new ReasonsFragment();
+                Fragment mStartFrag = new StartingFragment();
 
-                mTrans0.replace(R.id.reasons_frag, mRF);
+                mTrans0.replace(R.id.fragment_replace, mStartFrag);
 
                 break;
             case 3:
                 FragmentManager mFragManager3 = getFragmentManager();
                 FragmentTransaction mTrans3 = mFragManager3.beginTransaction();
 
-                Fragment mCF = new ContactsFragment();
+                Fragment mContactsFrag = new ContactsFragment();
 
-                mTrans3.replace(R.id.contacts_frag, mCF);
+                mTrans3.replace(R.id.fragment_replace, mContactsFrag);
 
                 break;
 
