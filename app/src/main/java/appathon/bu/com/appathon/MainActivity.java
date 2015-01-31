@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
 
@@ -37,8 +38,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
 
-//        if(GooglePlayServicesUtil.isGooglePlayServicesAvailable(this)){
-//            GooglePlayServicesUtil.getErrorDialog()
+//        if(!(GooglePlayServicesUtil.isGooglePlayServicesAvailable(this) == ConnectionResult.SUCCESS)){
+//            int tempStatus = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+//            GooglePlayServicesUtil.getErrorDialog(tempStatus, MainActivity.class, )
 //        }
 
 
