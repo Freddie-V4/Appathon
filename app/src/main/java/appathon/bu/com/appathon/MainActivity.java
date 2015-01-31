@@ -8,7 +8,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -77,7 +80,7 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
+        inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -158,7 +161,7 @@ public class MainActivity extends Activity {
 //        }
 
         Bundle args = new Bundle();
-        args.putInt(StartingFragment.TEA_TYPE_POS, position);
+//        args.putInt(StartingFragment.TEA_TYPE_POS, position);
         fragment.setArguments(args);
 
         // Highlight the selected item, update the title, and close the drawer
@@ -192,4 +195,4 @@ public class MainActivity extends Activity {
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-}}
+}
