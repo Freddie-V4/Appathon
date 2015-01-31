@@ -145,24 +145,21 @@ public class MainActivity extends Activity {
     private void selectItem(int position) {
 
         switch (POSITION) {
-
-
             case 0:
                 FragmentManager mFragManager0 = getFragmentManager();
                 FragmentTransaction mTrans0 = mFragManager0.beginTransaction();
-
                 Fragment mStartFrag = new StartingFragment();
 
-                mTrans0.replace(R.id.fragment_replace, mStartFrag);
+                mTrans0.replace(R.id.fragment_replace, mStartFrag).commit();
 
                 break;
-            case 3:
+            case 1:
                 FragmentManager mFragManager3 = getFragmentManager();
                 FragmentTransaction mTrans3 = mFragManager3.beginTransaction();
 
-                Fragment mContactsFrag = new ContactsFragment();
+                Fragment mReasonsFrag = new ReasonsFragment();
 
-                mTrans3.replace(R.id.fragment_replace, mContactsFrag);
+                mTrans3.replace(R.id.fragment_replace, mReasonsFrag).commit();
 
                 break;
 
