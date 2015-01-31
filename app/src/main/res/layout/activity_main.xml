@@ -5,7 +5,7 @@
 
 
     <!-- The main content view -->
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/frame_layout_init"
 
         android:layout_width="match_parent"
@@ -17,11 +17,41 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="BusyTime"
             android:id="@+id/textView"
-            android:layout_gravity="center_horizontal|top"
+            android:layout_gravity="center_horizontal"
             android:textSize="40dp"
-            android:textColor="#ffffffff" />
+            android:textColor="#ffffffff"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
-    </FrameLayout>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name:"
+            android:textSize="30dp"
+            android:textColor="#ffffffff"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:layout_below="@+id/textView"
+            android:layout_marginTop="106dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:text="Phone Number:"
+            android:textSize="30dp"
+            android:textColor="#ffffffff"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+    </RelativeLayout>
     <!-- The navigation drawer -->
 
 
