@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Appathon</string>
+
+    <string name="app_name">PriveTime</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title">Busy Time</string>
+
+
+    <string-array name="nav_array">
+        <item>Logs</item>
+        <item>Reasons</item>
+        <item>Manage</item>
+        <item>Activity</item>
+    </string-array>
+
+
+    <string name="drawer_open"></string>
+    <string name="drawer_close"></string>
+
 
 </resources>
