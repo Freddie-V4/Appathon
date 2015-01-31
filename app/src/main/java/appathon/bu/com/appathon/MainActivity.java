@@ -139,13 +139,11 @@ public class MainActivity extends Activity {
 
 
     /** Swaps fragments in the main content view */
-    /**
-     * Starts an Activity when item is clicked
-     */
+    /* Starts an Activity when item is clicked*/
     private void selectItem(int position) {
 
-        switch (POSITION) {
-            case 0:
+        switch (position) {
+            case POSITION:
                 FragmentManager mFragManager0 = getFragmentManager();
                 FragmentTransaction mTrans0 = mFragManager0.beginTransaction();
                 Fragment mStartFrag = new StartingFragment();
@@ -153,7 +151,7 @@ public class MainActivity extends Activity {
                 mTrans0.replace(R.id.fragment_replace, mStartFrag).commit();
 
                 break;
-            case 1:
+            case POSITION+1:
                 FragmentManager mFragManager3 = getFragmentManager();
                 FragmentTransaction mTrans3 = mFragManager3.beginTransaction();
 
