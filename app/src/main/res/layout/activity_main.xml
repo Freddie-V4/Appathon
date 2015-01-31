@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name:"
+            android:text="Name: e.g. John Smith"
             android:textSize="30dp"
             android:textColor="#ffffffff"
             android:ems="10"
@@ -39,13 +39,13 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="93dp"
-            android:hint="e.g. John Smith" />
+            android:hint="Name:" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="phone"
-            android:text="Phone number:"
+            android:text="Phone number: e.g. 123-456-7890"
             android:textSize="30dp"
             android:textColor="#ffffffff"
             android:ems="10"
@@ -53,7 +53,8 @@
             android:layout_below="@+id/editText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="70dp" />
+            android:layout_marginTop="70dp"
+            android:hint="Phone number:" />
 
 
     </RelativeLayout>
