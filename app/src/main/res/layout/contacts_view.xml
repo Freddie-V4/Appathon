@@ -53,6 +53,6 @@
         android:id="@+id/listView"
         android:layout_below="@+id/scrollView"
         android:layout_toRightOf="@+id/scrollView"
-        android:layout_toEndOf="@+id/scrollView" />
+        android:layout_toEndOf="@+id/scrollView"/>
 
 </RelativeLayout>
