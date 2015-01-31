@@ -122,7 +122,7 @@ public class MainActivity extends Activity {
 //        }
 
         Bundle args = new Bundle();
-//        args.putInt(StartingFragment.TEA_TYPE_POS, position);
+        args.putInt(StartingFragment.TEA_TYPE_POS, position);
         fragment.setArguments(args);
 
         // Highlight the selected item, update the title, and close the drawer
