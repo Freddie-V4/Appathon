@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -54,8 +55,12 @@ public class MainActivity extends Activity {
 
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+//        getActionBar().setDisplayHomeAsUpEnabled(true);
+//        getActionBar().setHomeButtonEnabled(true);
+
+        if(android.os.Build.VERSION.SDK_INT < 11) {
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+        }
 
         navDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
