@@ -2,6 +2,7 @@ package appathon.bu.com.appathon;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -15,6 +16,8 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.google.android.gms.common.GooglePlayServicesUtil;
 
 
 public class MainActivity extends Activity {
@@ -33,7 +36,20 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
+
+
+//        if(GooglePlayServicesUtil.isGooglePlayServicesAvailable(this)){
+//            GooglePlayServicesUtil.getErrorDialog()
+//        }
+
+
+        {
+            navDrawerTitles = getResources().getStringArray(R.array.nav_array);
+        }
+=======
         navDrawerTitles = getResources().getStringArray(R.array.nav_array);
+>>>>>>> d1d707c959f13b737cec5379253035f726b685b5
         navDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
