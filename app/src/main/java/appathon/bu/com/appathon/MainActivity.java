@@ -22,6 +22,7 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 
 
 public class MainActivity extends Activity {
+
     private String[] navDrawerTitles;
     private DrawerLayout navDrawerLayout;
     private ListView mDrawerList;
@@ -44,9 +45,6 @@ public class MainActivity extends Activity {
 //        }
 
 
-        {
-            navDrawerTitles = getResources().getStringArray(R.array.nav_array);
-        }
         navDrawerTitles = getResources().getStringArray(R.array.nav_array);
         navDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
@@ -56,9 +54,6 @@ public class MainActivity extends Activity {
                 R.layout.drawer_list_item, navDrawerTitles));
 
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
 
         navDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -72,14 +67,14 @@ public class MainActivity extends Activity {
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 // super.onDrawerClosed(view);
-                getActionBar().setTitle(R.string.app_name);
+//                getActionBar().setTitle(R.string.app_name);
                 invalidateOptionsMenu();
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
-                // super.onDrawerOpened(drawerView);
-                getActionBar().setTitle(R.string.app_name);
+                super.onDrawerOpened(drawerView);
+//                getActionBar().setTitle(R.string.app_name);
                 invalidateOptionsMenu();
             }
         };
@@ -150,7 +145,7 @@ public class MainActivity extends Activity {
     @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
-        getActionBar().setTitle(mTitle);
+//        getActionBar().setTitle(mTitle);
     }
 
     /**
