@@ -5,23 +5,24 @@
 
 
     <!-- The main content view -->
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/frame_layout_init"
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ffff6a6a">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="BusyTime"
             android:id="@+id/textView"
-            android:layout_gravity="center_horizontal"
             android:textSize="40dp"
             android:textColor="#ffffffff"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -32,30 +33,30 @@
             android:textColor="#ffffffff"
             android:ems="10"
             android:id="@+id/editText"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
             android:layout_below="@+id/textView"
-            android:layout_marginTop="106dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:hint="e.g. John Smith"
-            android:textColorHint="#00ffffff" />
+            android:layout_marginTop="93dp"
+            android:hint="e.g. John Smith" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="phone"
-            android:text="Phone Number:"
+            android:text="Phone number:"
             android:textSize="30dp"
             android:textColor="#ffffffff"
             android:ems="10"
             android:id="@+id/editText2"
-            android:layout_centerVertical="true"
+            android:layout_below="@+id/editText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:hint="e.g. 123-456-7890"
-            android:textColorHint="#ffffffff" />
+            android:layout_marginTop="70dp" />
 
 
-    </LinearLayout>
+    </RelativeLayout>
     <!-- The navigation drawer -->
 
 
