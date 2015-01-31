@@ -4,6 +4,7 @@
     <string name="app_name">Appathon</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title">Busy Time</string>
 
     <string-array name="nav_array">
         <item>Logs</item>
