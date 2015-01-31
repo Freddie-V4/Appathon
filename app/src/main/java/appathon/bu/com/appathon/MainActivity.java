@@ -2,23 +2,17 @@ package appathon.bu.com.appathon;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.content.res.Configuration;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
 
 
 public class MainActivity extends Activity {
@@ -132,7 +126,7 @@ public class MainActivity extends Activity {
 //        }
 
         Bundle args = new Bundle();
-        args.putInt(StartingFragment.TEA_TYPE_POS, position);
+        args.putInt(ReasonsFragment.TEA_TYPE_POS, position);
         fragment.setArguments(args);
 
         // Highlight the selected item, update the title, and close the drawer
