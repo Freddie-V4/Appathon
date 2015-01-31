@@ -118,7 +118,7 @@ public class MainActivity extends Activity {
      * Starts an Activity when item is clicked
      */
     private void selectItem(int position) {
-       
+
 //        }
 
         Bundle args = new Bundle();
