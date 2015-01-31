@@ -35,7 +35,9 @@
             android:layout_below="@+id/textView"
             android:layout_marginTop="106dp"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:hint="e.g. John Smith"
+            android:textColorHint="#00ffffff" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -48,7 +50,9 @@
             android:id="@+id/editText2"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:hint="e.g. 123-456-7890"
+            android:textColorHint="#ffffffff" />
 
 
     </RelativeLayout>
