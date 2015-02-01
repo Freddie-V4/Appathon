@@ -29,6 +29,7 @@ public class ContactsFragment extends Fragment implements View.OnClickListener {
     //private final static String[] FROM_COLUMNS = new String[];
     public static String[] names;
     public static String[] phoneNumbers;
+    public static String[] name_phone;
     ListView lv;
     String LOG_TAG = "Monitor";
 
@@ -48,7 +49,7 @@ public class ContactsFragment extends Fragment implements View.OnClickListener {
 
         while (phones.moveToNext()) {
             name += phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)) + "_";
-            phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+            phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)) + "_";
 
         }
         phones.close();
@@ -59,8 +60,15 @@ public class ContactsFragment extends Fragment implements View.OnClickListener {
         names = name.split("\\_");
 
         // Takes phone numbers from contacts and puts them into an array of phone numbers
-        phoneNumbers = phoneNumber.split("\\s+");
+        phoneNumbers = phoneNumber.split("\\_");
 
+        for(int i=0; i<names.length; i++){
+            for(int j=0; j<phoneNumbers.length; j++){
+                if(names[i] == phoneNumbers[j]){
+                    name_phone[i] = phoneNumbers[j];
+                }
+            }
+        }
 
         ArrayAdapter<String> aA = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, names);
         //ArrayAdapter<String> aB = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, phoneNumbers);
