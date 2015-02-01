@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,12 +49,17 @@ public class StartingFragment extends Fragment implements View.OnClickListener {
         int id = v.getId();
 
         if (id == R.id.button2) {
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction trans = fm.beginTransaction();
-            Fragment frag = new ReasonsFragment();
 
-            trans.replace(R.id.fragment_replace, frag);
-            trans.commit();
+            String messageToSend = "Hello World!";
+            String number = "2678648593";
+
+            SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null,null);
+//            FragmentManager fm = getFragmentManager();
+//            FragmentTransaction trans = fm.beginTransaction();
+//            Fragment frag = new ContactsFragment();
+//
+//            trans.replace(R.id.fragment_replace, frag);
+//            trans.commit();
         }
     }
 }
