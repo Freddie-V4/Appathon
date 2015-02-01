@@ -10,9 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.provider.ContactsContract;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -47,8 +50,15 @@ public class ContactsFragment extends Fragment {
         }
         phones.close();
 
+
+        // Takes strings of names and puts them into an array of names
         names = name.split("\\s+");
+
+        // Takes phone numbers from contacts and puts them into an array of phone numbers
         phoneNumbers = phoneNumber.split("\\s+");
+
+//        Button butt =
+//        Toast toast = Toast.makeText(getActivity(),Arrays.toString(phoneNumbers), Toast.LENGTH_LONG);
 
 
         ArrayAdapter<String> aA = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, names);
