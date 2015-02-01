@@ -31,17 +31,17 @@ public class ContactsFragment extends Fragment {
 
         // Inflating the layout
         View v = inflater.inflate(R.layout.contacts_view, container, false);
-        lv = (ListView)v.findViewById(R.id.listView);
+        lv = (ListView) v.findViewById(R.id.listView);
 
 
         String name = null;
         String phoneNumber = null;
 
-        ContentResolver cr = this.getActivity().getContentResolver();
-        Cursor phones = cr.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,null,null, null);
-        while (phones.moveToNext())
-        {
-            name=phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+        ContentResolver cr = getActivity().getContentResolver();
+        Cursor phones = cr.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+
+        while (phones.moveToNext()) {
+            name = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
             phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
 
         }
@@ -53,7 +53,7 @@ public class ContactsFragment extends Fragment {
 
         ArrayAdapter<String> aA = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, names);
 
-        for(int i = 0; i<names.length; i++){
+        for (int i = 0; i < names.length; i++) {
             lv.setAdapter(aA);
         }
 
