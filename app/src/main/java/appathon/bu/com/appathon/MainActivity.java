@@ -152,15 +152,24 @@ public class MainActivity extends Activity {
 
                 break;
             case POSITION+1:
-                FragmentManager mFragManager3 = getFragmentManager();
-                FragmentTransaction mTrans3 = mFragManager3.beginTransaction();
+                FragmentManager mFragManager1 = getFragmentManager();
+                FragmentTransaction mTrans1 = mFragManager1.beginTransaction();
 
                 Fragment mReasonsFrag = new ReasonsFragment();
 
-                mTrans3.replace(R.id.fragment_replace, mReasonsFrag).commit();
+                mTrans1.replace(R.id.fragment_replace, mReasonsFrag).commit();
 
                 break;
 
+            case POSITION+2:
+                FragmentManager mFragManager2 = getFragmentManager();
+                FragmentTransaction mTrans2 = mFragManager2.beginTransaction();
+
+                Fragment mContactsFrag = new ContactsFragment();
+
+                mTrans2.replace(R.id.fragment_replace, mContactsFrag).commit();
+
+                break;
 
         }
 
