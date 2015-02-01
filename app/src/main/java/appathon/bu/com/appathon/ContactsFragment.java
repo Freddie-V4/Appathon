@@ -3,8 +3,10 @@ package appathon.bu.com.appathon;
 import android.app.DownloadManager;
 import android.app.Fragment;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.Contacts;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +24,7 @@ import java.util.List;
 /**
  * Created by FreddieV4 on 1/31/2015.
  */
-public class ContactsFragment extends Fragment {
+public class ContactsFragment extends Fragment implements View.OnClickListener {
 
     //private final static String[] FROM_COLUMNS = new String[];
     public static String[] names;
@@ -65,9 +67,18 @@ public class ContactsFragment extends Fragment {
 
         lv.setAdapter(aA);
 
+        Button butt = (Button)v.findViewById(R.id.button_add);
 
+        butt.setOnClickListener(this);
         return v;
     }
 
 
+    @Override
+    public void onClick(View v) {
+        // Creates a new Intent to insert a contact
+        Intent intent = new Intent(Contacts.Intents.Insert.ACTION);
+// Sets the MIME type to match the Contacts Provider
+        intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
+    }
 }

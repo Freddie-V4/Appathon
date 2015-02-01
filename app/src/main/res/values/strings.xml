@@ -8,6 +8,7 @@
     <string name="title">Busy Time</string>
 
 
+
     <string-array name="nav_array">
         <item>Logs</item>
         <item>Reasons</item>
