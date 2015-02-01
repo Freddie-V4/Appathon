@@ -53,6 +53,7 @@ public class StartingFragment extends Fragment implements View.OnClickListener {
             Fragment frag = new ReasonsFragment();
 
             trans.replace(R.id.fragment_replace, frag);
+            trans.commit();
         }
     }
 }
