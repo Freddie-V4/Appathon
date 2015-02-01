@@ -45,13 +45,14 @@ public class StartingFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-//        int id = v.getId();
-//
-//        if (id == R.id.button2) {
+        int id = v.getId();
+
+        if (id == R.id.button2) {
             FragmentManager fm = getFragmentManager();
             FragmentTransaction trans = fm.beginTransaction();
             Fragment frag = new ReasonsFragment();
 
             trans.replace(R.id.fragment_replace, frag);
+        }
     }
 }
