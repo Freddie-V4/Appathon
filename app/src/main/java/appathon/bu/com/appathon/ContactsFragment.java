@@ -51,17 +51,10 @@ public class ContactsFragment extends Fragment {
         }
         phones.close();
 
-<<<<<<< HEAD
-        Log.v(name, LOG_TAG);
-
-        names = name.split("\\_");
-=======
-
         // Takes strings of names and puts them into an array of names
-        names = name.split("\\s+");
+        names = name.split("\\_");
 
         // Takes phone numbers from contacts and puts them into an array of phone numbers
->>>>>>> 02c0d3f828fedcfc6f5a0d3b29cd37f775823330
         phoneNumbers = phoneNumber.split("\\s+");
 
 //        Button butt =
