@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.Contacts;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -84,9 +85,11 @@ public class ContactsFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        // Creates a new Intent to insert a contact
-        Intent intent = new Intent(Contacts.Intents.Insert.ACTION);
-// Sets the MIME type to match the Contacts Provider
-        intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
+//        // Creates a new Intent to insert a contact
+//        Intent intent = new Intent(Contacts.Intents.Insert.ACTION);
+//// Sets the MIME type to match the Contacts Provider
+//        intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
+
+
     }
 }

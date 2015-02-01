@@ -49,17 +49,17 @@ public class StartingFragment extends Fragment implements View.OnClickListener {
         int id = v.getId();
 
         if (id == R.id.button2) {
-
-            String messageToSend = "Hello World!";
-            String number = "2678648593";
-
-            SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null,null);
 //            FragmentManager fm = getFragmentManager();
 //            FragmentTransaction trans = fm.beginTransaction();
 //            Fragment frag = new ContactsFragment();
 //
 //            trans.replace(R.id.fragment_replace, frag);
 //            trans.commit();
+            // Send phone number to person
+            String messageToSend = "Take back your private time!";
+            String number = "2678648593";
+
+            SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null,null);
         }
     }
 }
