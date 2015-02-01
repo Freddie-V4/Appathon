@@ -56,7 +56,6 @@ public class ContactsFragment extends Fragment {
         // Takes strings of names and puts them into an array of names
         names = name.split("\\_");
 
-
         // Takes phone numbers from contacts and puts them into an array of phone numbers
         phoneNumbers = phoneNumber.split("\\s+");
 
