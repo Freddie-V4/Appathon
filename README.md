@@ -1,4 +1,5 @@
-# PriveTime ![alt tag](https://raw.githubusercontent.com/Freddie-V4/PriveTime----Appathon/master/app/src/main/res/drawable-hdpi/ic_launcher.png)
+# ![alt tag](https://raw.githubusercontent.com/Freddie-V4/PriveTime----Appathon/master/app/src/main/res/drawable-hdpi/ic_launcher.png) PriveTime 
+
 
 PriveTime is an Android lifestyle application that eases communication between friends.
 
