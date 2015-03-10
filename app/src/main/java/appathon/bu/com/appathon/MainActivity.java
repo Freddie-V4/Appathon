@@ -8,6 +8,8 @@ import android.content.res.Configuration;
 import android.nfc.Tag;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.Log;
 import android.view.Menu;
@@ -22,7 +24,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
     private String[] navDrawerTitles;
     private DrawerLayout navDrawerLayout;
@@ -36,13 +38,19 @@ public class MainActivity extends Activity {
     String TAG = "TAG";
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        checkPlayServices();  //check for valid install of Google Play Services
+
+
+
+
+
 
         navDrawerTitles = getResources().getStringArray(R.array.nav_array);
         navDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -66,7 +74,7 @@ public class MainActivity extends Activity {
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 // super.onDrawerClosed(view);
-//                getActionBar().setTitle(R.string.app_name);
+                ab.setTitle(R.string.app_name);
                 invalidateOptionsMenu();
             }
 
@@ -86,21 +94,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    private boolean checkPlayServices() {
-        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
-        if (resultCode != ConnectionResult.SUCCESS) {
-            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
-                GooglePlayServicesUtil.getErrorDialog(resultCode, this,
-                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
-            } else {
 
-
-                finish();
-            }
-            return false;
-        }
-        return true;
-    }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -122,10 +116,8 @@ public class MainActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Pass the event to ActionBarDrawerToggle, if it returns
         // true, then it has handled the app icon touch event
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+
+        return mDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 
     private class DrawerItemClickListener implements
@@ -142,36 +134,36 @@ public class MainActivity extends Activity {
     /* Starts an Activity when item is clicked*/
     private void selectItem(int position) {
 
-        switch (position) {
-            case POSITION:
-                FragmentManager mFragManager0 = getFragmentManager();
-                FragmentTransaction mTrans0 = mFragManager0.beginTransaction();
-                Fragment mStartFrag = new StartingFragment();
+//        switch (position) {
+//            case POSITION:
+//                FragmentManager mFragManager0 = getFragmentManager();
+//                FragmentTransaction mTrans0 = mFragManager0.beginTransaction();
+//                Fragment mStartFrag = new StartingFragment();
+//
+//                mTrans0.replace(R.id.fragment_replace, mStartFrag).commit();
+//
+//                break;
+//            case POSITION+1:
+//                FragmentManager mFragManager1 = getFragmentManager();
+//                FragmentTransaction mTrans1 = mFragManager1.beginTransaction();
+//
+//                Fragment mReasonsFrag = new ReasonsFragment();
+//
+//                mTrans1.replace(R.id.fragment_replace, mReasonsFrag).commit();
+//
+//                break;
+//
+//            case POSITION+2:
+//                FragmentManager mFragManager2 = getFragmentManager();
+//                FragmentTransaction mTrans2 = mFragManager2.beginTransaction();
+//
+//                Fragment mContactsFrag = new ContactsFragment();
+//
+//                mTrans2.replace(R.id.fragment_replace, mContactsFrag).commit();
+//
+//                break;
 
-                mTrans0.replace(R.id.fragment_replace, mStartFrag).commit();
-
-                break;
-            case POSITION+1:
-                FragmentManager mFragManager1 = getFragmentManager();
-                FragmentTransaction mTrans1 = mFragManager1.beginTransaction();
-
-                Fragment mReasonsFrag = new ReasonsFragment();
-
-                mTrans1.replace(R.id.fragment_replace, mReasonsFrag).commit();
-
-                break;
-
-            case POSITION+2:
-                FragmentManager mFragManager2 = getFragmentManager();
-                FragmentTransaction mTrans2 = mFragManager2.beginTransaction();
-
-                Fragment mContactsFrag = new ContactsFragment();
-
-                mTrans2.replace(R.id.fragment_replace, mContactsFrag).commit();
-
-                break;
-
-        }
+//        }
 
 
         Bundle args = new Bundle();
@@ -188,7 +180,7 @@ public class MainActivity extends Activity {
     @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
-//        getActionBar().setTitle(mTitle);
+        ab.setTitle(mTitle);
     }
 
     /**
