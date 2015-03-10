@@ -1,17 +1,10 @@
 package appathon.bu.com.appathon;
 
-import android.app.ActionBar;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.telephony.SmsManager;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -68,10 +61,12 @@ public class StartingActivity extends ActionBarActivity implements View.OnClickL
 
         if (id == R.id.button2) {
             // Send message to person
-            String messageToSend = "Take back your private time!";
-            String number = "2678648593";
-
-            SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
+//            String messageToSend = "Take back your private time!";
+//            String number = "2678648593";
+//
+//            SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
+            Intent i = new Intent(StartingActivity.this, ReasonsActivity.class);
+            startActivity(i);
         }
     }
 
