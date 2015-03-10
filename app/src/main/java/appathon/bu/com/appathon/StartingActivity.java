@@ -65,7 +65,7 @@ public class StartingActivity extends ActionBarActivity implements View.OnClickL
 //            String number = "2678648593";
 //
 //            SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
-            Intent i = new Intent(StartingActivity.this, ReasonsActivity.class);
+            Intent i = new Intent(StartingActivity.this, ContactsActivity.class);
             startActivity(i);
         }
     }
