@@ -54,9 +54,9 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
         // Takes phone numbers from contacts and puts them into an array of phone numbers
         phoneNumbers = phoneNumber.split("\\_");
 
-        for(int i=0; i<names.length; i++){
-            for(int j=0; j<phoneNumbers.length; j++){
-                if(names[i] == phoneNumbers[j]){
+        for (int i = 0; i < names.length; i++) {
+            for (int j = 0; j < phoneNumbers.length; j++) {
+                if (names[i] == phoneNumbers[j]) {
                     name_phone[i] = phoneNumbers[j];
                 }
             }
@@ -67,26 +67,28 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
 
         lv.setAdapter(aA);
 
-        Button butt = (Button) findViewById(R.id.button_add);
+        Button addButton = (Button) findViewById(R.id.button_add);
 
-        butt.setOnClickListener(this);
+        addButton.setOnClickListener(this);
     }
 
 
     @Override
     public void onClick(View v) {
+        int id = v.getId();
 //        // Creates a new Intent to insert a contact
 //        Intent intent = new Intent(Contacts.Intents.Insert.ACTION);
 //// Sets the MIME type to match the Contacts Provider
 //        intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
 //        Send message to person
+        if(id == R.id.button_add){
             String messageToSend = "Take back your private time!";
             String number = "7813086904";
 
             SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
 
-        Intent i = new Intent(ContactsActivity.this, ReasonsActivity.class);
-        startActivity(i);
-
+            Intent i = new Intent(ContactsActivity.this, ReasonsActivity.class);
+            startActivity(i);
+        }
     }
 }

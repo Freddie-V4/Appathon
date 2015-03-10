@@ -76,9 +76,7 @@ public class StartingActivity extends ActionBarActivity implements View.OnClickL
             if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
                 GooglePlayServicesUtil.getErrorDialog(resultCode, this,
                         PLAY_SERVICES_RESOLUTION_REQUEST).show();
-            }
-
-            else {
+            } else {
 
                 finish();
             }
