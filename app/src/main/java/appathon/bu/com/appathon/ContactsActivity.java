@@ -13,6 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.Arrays;
+
 /**
  * Created by FreddieV4 on 1/31/2015.
  */
@@ -54,7 +56,7 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
         // Takes phone numbers from contacts and puts them into an array of phone numbers
         phoneNumbers = phoneNumber.split("\\_");
 
-        Log.d(LOG_TAG, "Here is the list of phone numbers BEFORE: " + phoneNumbers.toString());
+        Log.d(LOG_TAG, "Here is the list of phone numbers BEFORE: " + Arrays.toString(phoneNumbers));
         for (int i = 0; i < names.length; i++) {
             for (int j = 0; j < phoneNumbers.length; j++) {
                 if (names[i] == phoneNumbers[j]) {
@@ -62,7 +64,7 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
                 }
             }
         }
-        Log.d(LOG_TAG, "Here is the list of phone numbers AFTER: " + phoneNumbers.toString());
+        Log.d(LOG_TAG, "Here is the list of phone numbers AFTER: " + Arrays.toString(phoneNumbers));
 
         ArrayAdapter<String> aA = new ArrayAdapter<String>(ContactsActivity.this, android.R.layout.simple_list_item_1, names);
         ArrayAdapter<String> aB = new ArrayAdapter<String>(ContactsActivity.this, android.R.layout.simple_list_item_1, phoneNumbers);
@@ -87,7 +89,7 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
         if(id == R.id.button_add){
 //            String messageToSend = "Take back your private time!";
             String messageToSend = "Hi. Hope you don't mind this text. Just testing out a feature of an app I'm working on!";
-            String number = phoneNumbers[1];
+            String number = "7813086904";
 
             SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
 
