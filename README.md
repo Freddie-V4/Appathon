@@ -6,7 +6,7 @@ PriveTime is an Android lifestyle application that eases communication between f
 ## Motivation
 An Android application made for the BU GAI Appathon
 
-## Contributors
+## Collaborators
 
 [Sean Zhang](https://github.com/puzzledsean)
 
