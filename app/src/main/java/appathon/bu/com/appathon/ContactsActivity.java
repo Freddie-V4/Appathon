@@ -1,9 +1,11 @@
 package appathon.bu.com.appathon;
 
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.provider.ContactsContract;
@@ -61,7 +63,7 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
         }
 
         ArrayAdapter<String> aA = new ArrayAdapter<String>(ContactsActivity.this, android.R.layout.simple_list_item_1, names);
-        //ArrayAdapter<String> aB = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, phoneNumbers);
+        ArrayAdapter<String> aB = new ArrayAdapter<String>(ContactsActivity.this, android.R.layout.simple_list_item_1, phoneNumbers);
 
         lv.setAdapter(aA);
 
@@ -77,7 +79,14 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
 //        Intent intent = new Intent(Contacts.Intents.Insert.ACTION);
 //// Sets the MIME type to match the Contacts Provider
 //        intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
+//        Send message to person
+            String messageToSend = "Take back your private time!";
+            String number = "7813086904";
 
+            SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
+
+        Intent i = new Intent(ContactsActivity.this, ReasonsActivity.class);
+        startActivity(i);
 
     }
 }
