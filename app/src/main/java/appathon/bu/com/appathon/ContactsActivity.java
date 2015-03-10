@@ -1,31 +1,20 @@
 package appathon.bu.com.appathon;
 
-import android.app.DownloadManager;
-import android.app.Fragment;
 import android.content.ContentResolver;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.provider.Contacts;
-import android.telephony.SmsManager;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.provider.ContactsContract;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by FreddieV4 on 1/31/2015.
  */
-public class ContactsFragment extends Fragment implements View.OnClickListener {
+public class ContactsActivity extends ActionBarActivity implements View.OnClickListener {
 
     //private final static String[] FROM_COLUMNS = new String[];
     public static String[] names;
@@ -35,17 +24,17 @@ public class ContactsFragment extends Fragment implements View.OnClickListener {
     String LOG_TAG = "Monitor";
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         // Inflating the layout
-        View v = inflater.inflate(R.layout.contacts_view, container, false);
-        lv = (ListView) v.findViewById(R.id.listView);
+        setContentView(R.layout.contacts_view);
+        lv = (ListView) findViewById(R.id.listView);
 
 
         String name = " ";
         String phoneNumber = "";
 
-        ContentResolver cr = getActivity().getContentResolver();
+        ContentResolver cr = getContentResolver();
         Cursor phones = cr.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
 
         while (phones.moveToNext()) {
@@ -71,15 +60,14 @@ public class ContactsFragment extends Fragment implements View.OnClickListener {
             }
         }
 
-        ArrayAdapter<String> aA = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, names);
+        ArrayAdapter<String> aA = new ArrayAdapter<String>(ContactsActivity.this, android.R.layout.simple_list_item_1, names);
         //ArrayAdapter<String> aB = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, phoneNumbers);
 
         lv.setAdapter(aA);
 
-        Button butt = (Button)v.findViewById(R.id.button_add);
+        Button butt = (Button) findViewById(R.id.button_add);
 
         butt.setOnClickListener(this);
-        return v;
     }
 
 
