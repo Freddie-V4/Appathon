@@ -26,7 +26,13 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
     private static String[] name_phone;
     private ListView lv;
     private String LOG_TAG = "Monitor";
+    private boolean debug = false;
 
+    // debugging method
+    private void db(String s){
+        if(debug)
+            Log.d(LOG_TAG, s);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
