@@ -21,11 +21,12 @@ import java.util.Arrays;
 public class ContactsActivity extends ActionBarActivity implements View.OnClickListener {
 
     //private final static String[] FROM_COLUMNS = new String[];
-    public static String[] names;
-    public static String[] phoneNumbers;
-    public static String[] name_phone;
-    ListView lv;
-    String LOG_TAG = "Monitor";
+    private static String[] names;
+    private static String[] phoneNumbers;
+    private static String[] name_phone;
+    private ListView lv;
+    private String LOG_TAG = "Monitor";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
         lv = (ListView) findViewById(R.id.listView);
 
 
-        String name = " ";
+        String name = "";
         String phoneNumber = "";
 
         ContentResolver cr = getContentResolver();
@@ -48,15 +49,14 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
         }
         phones.close();
 
-        Log.v(name, LOG_TAG);
-
         // Takes strings of names and puts them into an array of names
         names = name.split("\\_");
+        // Sorts name alphabetically
+        mergeSort(names);
 
         // Takes phone numbers from contacts and puts them into an array of phone numbers
         phoneNumbers = phoneNumber.split("\\_");
 
-        Log.d(LOG_TAG, "Here is the list of phone numbers BEFORE: " + Arrays.toString(phoneNumbers));
         for (int i = 0; i < names.length; i++) {
             for (int j = 0; j < phoneNumbers.length; j++) {
                 if (names[i] == phoneNumbers[j]) {
@@ -64,7 +64,8 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
                 }
             }
         }
-        Log.d(LOG_TAG, "Here is the list of phone numbers AFTER: " + Arrays.toString(phoneNumbers));
+
+
 
         ArrayAdapter<String> aA = new ArrayAdapter<String>(ContactsActivity.this, android.R.layout.simple_list_item_1, names);
         ArrayAdapter<String> aB = new ArrayAdapter<String>(ContactsActivity.this, android.R.layout.simple_list_item_1, phoneNumbers);
@@ -86,7 +87,7 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
 //// Sets the MIME type to match the Contacts Provider
 //        intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
 //        Send message to person
-        if(id == R.id.button_add){
+        if (id == R.id.button_add) {
 //            String messageToSend = "Take back your private time!";
             String messageToSend = "Hi. Hope you don't mind this text. Just testing out a feature of an app I'm working on!";
             String number = "7813086904";
@@ -95,6 +96,41 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
 
             Intent i = new Intent(ContactsActivity.this, ReasonsActivity.class);
             startActivity(i);
+        }
+    }
+
+    // sorts a list using mergeSort Algorithm
+    private static void mergeSort(String[] names) {
+        if (names.length >= 2) {
+            String[] left = new String[names.length / 2];
+            String[] right = new String[names.length - names.length / 2];
+
+            for (int i = 0; i < left.length; i++) {
+                left[i] = names[i];
+            }
+
+            for (int i = 0; i < right.length; i++) {
+                right[i] = names[i + names.length / 2];
+            }
+
+            mergeSort(left);
+            mergeSort(right);
+            merge(names, left, right);
+        }
+    }
+
+    // merges two halves of the array for mergeSort Algorithm
+    private static void merge(String[] names, String[] left, String[] right) {
+        int a = 0;
+        int b = 0;
+        for (int i = 0; i < names.length; i++) {
+            if (b >= right.length || (a < left.length && left[a].compareToIgnoreCase(right[b]) < 0)) {
+                names[i] = left[a];
+                a++;
+            } else {
+                names[i] = right[b];
+                b++;
+            }
         }
     }
 }
