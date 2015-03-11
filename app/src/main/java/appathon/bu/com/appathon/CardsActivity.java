@@ -27,7 +27,6 @@ public class CardsActivity extends Card {
 
 
     private void init() {
-//        CardView card = (CardView) findViewById(R.id.card_view);
 
         //Set click listener
         setOnClickListener(new OnCardClickListener() {

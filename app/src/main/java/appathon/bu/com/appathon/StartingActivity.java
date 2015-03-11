@@ -35,6 +35,7 @@ public class StartingActivity extends ActionBarActivity implements View.OnClickL
         if (ab != null) {
             ab.setTitle(R.string.app_name);
             ab.setLogo(R.drawable.ic_launcher);
+            ab.setDisplayUseLogoEnabled(true);
             ab.setHomeButtonEnabled(enabled);
         }
 
