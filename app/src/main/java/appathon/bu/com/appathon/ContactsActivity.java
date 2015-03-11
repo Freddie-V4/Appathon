@@ -25,25 +25,22 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
     private static String[] phoneNumbers;
     private static String[] name_phone;
     private ListView lv;
-    private String LOG_TAG = "Monitor";
+    private String TAG = "DEBUG";
     private boolean debug = false;
+    private String name = "";
+    private String phoneNumber = "";
 
     // debugging method
-    private void db(String s){
-        if(debug)
-            Log.d(LOG_TAG, s);
+    private void db(String s) {
+        if (debug)
+            Log.d(TAG, s);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Inflating the layout
         setContentView(R.layout.contacts_view);
         lv = (ListView) findViewById(R.id.listView);
-
-
-        String name = "";
-        String phoneNumber = "";
 
         ContentResolver cr = getContentResolver();
         Cursor phones = cr.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
@@ -57,7 +54,8 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
 
         // Takes strings of names and puts them into an array of names
         names = name.split("\\_");
-        // Sorts name alphabetically
+
+        // Sorts name alphabetically by first name
         mergeSort(names);
 
         // Takes phone numbers from contacts and puts them into an array of phone numbers
@@ -70,8 +68,6 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
                 }
             }
         }
-
-
 
         ArrayAdapter<String> aA = new ArrayAdapter<String>(ContactsActivity.this, android.R.layout.simple_list_item_1, names);
         ArrayAdapter<String> aB = new ArrayAdapter<String>(ContactsActivity.this, android.R.layout.simple_list_item_1, phoneNumbers);
