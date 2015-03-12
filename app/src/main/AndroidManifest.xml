@@ -34,7 +34,7 @@
             android:name=".ReasonsActivity"
             android:label="@string/app_name"></activity>
         <activity
-            android:name=".CardsActivity"
+            android:name=".CardView"
             android:label="@string/app_name"></activity>
     </application>
 
