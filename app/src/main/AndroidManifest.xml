@@ -34,8 +34,8 @@
             android:name=".ReasonsActivity"
             android:label="@string/app_name"></activity>
         <activity
-            android:name=".CardView"
-            android:label="@string/app_name"></activity>
+            android:name=".CardsActivity"
+            android:label="@string/app_name"/>
     </application>
 
 </manifest>

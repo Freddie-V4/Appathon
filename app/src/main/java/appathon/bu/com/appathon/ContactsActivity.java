@@ -94,7 +94,7 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
             String messageToSend = "Hi. Hope you don't mind this text. Just testing out a feature of an app I'm working on!";
             String number = "7813086904";
 
-            SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
+//            SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
 
             Intent i = new Intent(ContactsActivity.this, ReasonsActivity.class);
             startActivity(i);

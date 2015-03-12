@@ -29,7 +29,7 @@ public class ReasonsActivity extends ActionBarActivity {
         ib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ReasonsActivity.this, CardView.class);
+                Intent i = new Intent(ReasonsActivity.this, CardsActivity.class);
                 startActivity(i);
             }
         });
