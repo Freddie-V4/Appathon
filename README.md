@@ -1,4 +1,4 @@
-# ![alt tag](https://raw.githubusercontent.com/Freddie-V4/PriveTime----Appathon/master/app/src/main/res/drawable-hdpi/ic_launcher.png) PriveTime 
+![alt tag](http://fjv4.com/img/portfolio/privetimebanner.png)
 
 PriveTime is an Android lifestyle application that eases communication between you and your roommate.
 
