@@ -21,12 +21,9 @@ public class StartingActivity extends Activity {
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private boolean enabled = true;
     private Button enter;
-    private EditText name;
-    private EditText phoneNumber;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        // Inflating the layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starting);
         checkPlayServices();  //check for valid install of Google Play Services
@@ -37,8 +34,8 @@ public class StartingActivity extends Activity {
         Parse.initialize(StartingActivity.this, "y3D6qePfthe7VxIIHdwynl7csbYGoDDOPFXteYHa", "l7QD57x45ILOGQidOtZq7DiD9tRmY3dVe115krz7");
 
         // Find EditText views
-        name = (EditText) findViewById(R.id.nameText);
-        phoneNumber = (EditText) findViewById(R.id.phoneNumberText);
+        final EditText name = (EditText) findViewById(R.id.nameText);
+        final EditText phoneNumber = (EditText) findViewById(R.id.phoneNumberText);
 
         enter = (Button) findViewById(R.id.enterButton);
         enter.setOnClickListener(new View.OnClickListener() {
@@ -49,10 +46,10 @@ public class StartingActivity extends Activity {
                 String phoneString = phoneNumber.getText().toString();
 
                 // Put name and phone number into Parse data table
-                ParseObject testObject = new ParseObject("InputObject");
-                testObject.put("Name", nameString);
-                testObject.put("Phone Number", phoneString);
-                testObject.saveInBackground();
+                ParseObject signUpObject = new ParseObject("SignUpObject");
+                signUpObject.put("Name", nameString);
+                signUpObject.put("Phone-Number", phoneString);
+                signUpObject.saveInBackground();
 
                 // Move to next Activity to test it
                 Intent i = new Intent(StartingActivity.this, ContactsActivity.class);
