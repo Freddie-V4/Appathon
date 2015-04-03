@@ -20,10 +20,14 @@ public class StartingActivity extends ActionBarActivity implements View.OnClickL
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         // Inflating the layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_starting);
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+
+        Parse.initialize(this, "y3D6qePfthe7VxIIHdwynl7csbYGoDDOPFXteYHa", "l7QD57x45ILOGQidOtZq7DiD9tRmY3dVe115krz7");
+
 
         checkPlayServices();  //check for valid install of Google Play Services
 
