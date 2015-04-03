@@ -62,7 +62,8 @@
             android:id="@+id/enterButton"
             android:layout_marginTop="59dp"
             android:layout_below="@+id/phoneNumberText"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_background"/>
 
 
     </RelativeLayout>
