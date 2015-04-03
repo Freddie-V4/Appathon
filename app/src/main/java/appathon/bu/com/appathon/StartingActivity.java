@@ -16,8 +16,8 @@ import com.parse.Parse;
  */
 public class StartingActivity extends ActionBarActivity implements View.OnClickListener {
 
-    private boolean enabled = true;
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+    private boolean enabled = true;
     private Button enter;
 
     @Override
@@ -32,7 +32,7 @@ public class StartingActivity extends ActionBarActivity implements View.OnClickL
 
         Parse.initialize(this, "y3D6qePfthe7VxIIHdwynl7csbYGoDDOPFXteYHa", "l7QD57x45ILOGQidOtZq7DiD9tRmY3dVe115krz7");
 
-        enter = (Button) findViewById(R.id.button2);
+        enter = (Button) findViewById(R.id.enterButton);
         enter.setOnClickListener(this);
 
         android.support.v7.app.ActionBar ab = getSupportActionBar();
@@ -65,7 +65,7 @@ public class StartingActivity extends ActionBarActivity implements View.OnClickL
     public void onClick(View v) {
         int id = v.getId();
 
-        if (id == R.id.button2) {
+        if (id == R.id.enterButton) {
 
             Intent i = new Intent(StartingActivity.this, ContactsActivity.class);
             startActivity(i);

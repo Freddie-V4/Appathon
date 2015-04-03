@@ -19,6 +19,9 @@
 
     <string name="drawer_open"></string>
     <string name="drawer_close"></string>
+    <string name="enter_button">Enter</string>
+    <string name="phone_number_input">Phone number:</string>
+    <string name="name_input">Name:</string>
 
 
 </resources>
