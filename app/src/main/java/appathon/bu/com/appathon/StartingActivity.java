@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.parse.Parse;
 
 /**
  * Created by FreddieV4 on 1/31/2015.
@@ -17,22 +18,22 @@ public class StartingActivity extends ActionBarActivity implements View.OnClickL
 
     private boolean enabled = true;
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+    private Button enter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         // Inflating the layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_starting);
+        checkPlayServices();  //check for valid install of Google Play Services
+
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
 
         Parse.initialize(this, "y3D6qePfthe7VxIIHdwynl7csbYGoDDOPFXteYHa", "l7QD57x45ILOGQidOtZq7DiD9tRmY3dVe115krz7");
 
-
-        checkPlayServices();  //check for valid install of Google Play Services
-
-        Button b = (Button) findViewById(R.id.button2);
-        b.setOnClickListener(this);
+        enter = (Button) findViewById(R.id.button2);
+        enter.setOnClickListener(this);
 
         android.support.v7.app.ActionBar ab = getSupportActionBar();
 
@@ -65,11 +66,7 @@ public class StartingActivity extends ActionBarActivity implements View.OnClickL
         int id = v.getId();
 
         if (id == R.id.button2) {
-            // Send message to person
-//            String messageToSend = "Take back your private time!";
-//            String number = "2678648593";
-//
-//            SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
+
             Intent i = new Intent(StartingActivity.this, ContactsActivity.class);
             startActivity(i);
         }
