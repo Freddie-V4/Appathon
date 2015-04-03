@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * Created by FreddieV4 on 1/31/2015.
@@ -55,8 +56,8 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
         // Takes strings of names and puts them into an array of names
         names = name.split("\\_");
 
-        // Sorts name alphabetically by first name
-        mergeSort(names);
+        // Sorts name alphabetically by first and last name
+        Arrays.sort(names, new AlphaCompare());
 
         // Takes phone numbers from contacts and puts them into an array of phone numbers
         phoneNumbers = phoneNumber.split("\\_");
@@ -95,44 +96,15 @@ public class ContactsActivity extends ActionBarActivity implements View.OnClickL
             String number = "7813086904";
 
 //            SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
-
             Intent i = new Intent(ContactsActivity.this, ReasonsActivity.class);
             startActivity(i);
         }
     }
 
-    // sorts a list using mergeSort Algorithm
-    private static void mergeSort(String[] names) {
-        if (names.length >= 2) {
-            String[] left = new String[names.length / 2];
-            String[] right = new String[names.length - names.length / 2];
-
-            for (int i = 0; i < left.length; i++) {
-                left[i] = names[i];
-            }
-
-            for (int i = 0; i < right.length; i++) {
-                right[i] = names[i + names.length / 2];
-            }
-
-            mergeSort(left);
-            mergeSort(right);
-            merge(names, left, right);
+    private static class AlphaCompare implements Comparator<String> {
+        public int compare(String s1, String s2) {
+            return (s1.toLowerCase().compareTo(s2.toLowerCase()));
         }
     }
 
-    // merges two halves of the array for mergeSort Algorithm
-    private static void merge(String[] names, String[] left, String[] right) {
-        int a = 0;
-        int b = 0;
-        for (int i = 0; i < names.length; i++) {
-            if (b >= right.length || (a < left.length && left[a].compareToIgnoreCase(right[b]) < 0)) {
-                names[i] = left[a];
-                a++;
-            } else {
-                names[i] = right[b];
-                b++;
-            }
-        }
-    }
 }
