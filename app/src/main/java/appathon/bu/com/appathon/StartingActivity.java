@@ -3,7 +3,6 @@ package appathon.bu.com.appathon;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -24,20 +23,18 @@ public class StartingActivity extends Activity {
     private Button enter;
     private EditText name;
     private EditText phoneNumber;
-    private String nameString;
-    private String phoneString;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         // Inflating the layout
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_starting);
+        setContentView(R.layout.activity_starting);
         checkPlayServices();  //check for valid install of Google Play Services
 
         // Enable Local Datastore.
-        Parse.enableLocalDatastore(this);
+        Parse.enableLocalDatastore(StartingActivity.this);
 
-        Parse.initialize(this, "y3D6qePfthe7VxIIHdwynl7csbYGoDDOPFXteYHa", "l7QD57x45ILOGQidOtZq7DiD9tRmY3dVe115krz7");
+        Parse.initialize(StartingActivity.this, "y3D6qePfthe7VxIIHdwynl7csbYGoDDOPFXteYHa", "l7QD57x45ILOGQidOtZq7DiD9tRmY3dVe115krz7");
 
         // Find EditText views
         name = (EditText) findViewById(R.id.nameText);
@@ -48,14 +45,14 @@ public class StartingActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // Get user input from EditText and add values to strings
-                nameString = name.getText().toString();
-                phoneString = phoneNumber.getText().toString();
+                String nameString = name.getText().toString();
+                String phoneString = phoneNumber.getText().toString();
 
                 // Put name and phone number into Parse data table
-                ParseObject inputObject = new ParseObject("InputObject");
-                inputObject.put("Name", nameString);
-                inputObject.put("Phone Number", phoneString);
-                inputObject.saveInBackground();
+                ParseObject testObject = new ParseObject("InputObject");
+                testObject.put("Name", nameString);
+                testObject.put("Phone Number", phoneString);
+                testObject.saveInBackground();
 
                 // Move to next Activity to test it
                 Intent i = new Intent(StartingActivity.this, ContactsActivity.class);
