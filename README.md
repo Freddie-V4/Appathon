@@ -1,10 +1,9 @@
-![alt tag](http://fjv4.com/img/portfolio/privetimebanner.png)
+[![Join the chat at https://gitter.im/FreddieV4/PriveTime](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/FreddieV4/PriveTime?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+![alt tag](http://fjv4.com/img/portfolio/privetimebanner.png)
 PriveTime is an Android lifestyle application that eases communication between you and your roommate.
 
 ## Motivation
-
-[![Join the chat at https://gitter.im/FreddieV4/PriveTime](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/FreddieV4/PriveTime?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 An Android application made for the BU GAI Appathon
 
 ## Achievements
