@@ -14,10 +14,5 @@ Won **Best UX Design** for Boston University's Global Appathon
 
 ## Collaborators
 
-[Sean Zhang](https://github.com/puzzledsean)
-
-[Mark Bestavros](https://github.com/Markouka)
-
-[Claire Wang](https://github.com/clairew)
-
-[David Wang](https://github.com/davidwang830)
+[Sean Zhang](https://github.com/puzzledsean) || [Mark Bestavros](https://github.com/Markouka) 
+|| [Claire Wang](https://github.com/clairew) || [David Wang](https://github.com/davidwang830)
