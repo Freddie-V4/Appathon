@@ -8,7 +8,7 @@ An Android application made for the BU GAI Appathon
 ## Achievements
 Won **Best UX Design** for Boston University's Global Appathon
 
-[ChallengePost](http://2gaiappathon.challengepost.com/submissions)
+[DevPost](http://2gaiappathon.challengepost.com/submissions)
 
 ## Collaborators
 
